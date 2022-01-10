@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css"type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>groom it</title>
+</head>
+<body>
+    <div class="main">
+        <div class="imgd">
+        <img src="logo/groomit.png">
+        
+    </div>
+    <h2>men's grooming care products</h2>
+
+    <div class="mcontainer">
+        <div class="cont" id="discript">
+            <p>Wide range of grooming products for men.From skin to hair our brand caters extraordinary products.
+                To live an extraordinary life, you must resist an ordinary approach.</p>
+                <button class="butto2"onclick="popup()">be a member</button>
+        </div>
+        <div class="icontainer" id="mainshow">
+            <h1>resigtration details</h1>
+            <form class="bod" onsubmit="return validation()">
+                <label>username</label><br>
+                <input type="text" name="username" id="username"><br>
+                <span id='un'></span>
+                <br>
+                <label>password</label><br>
+                <input type="text" name="password" id="password"><br>
+                <span id='pwd'></span>
+                <br>
+                <label>confirm password</label><br>
+                <input type="text" name="confirm" id="confirm"><br>
+                <span id='conpwd'></span>
+                <br>
+                <label>email</label><br>
+                <input type="text" name="email" id="email"><br>
+                <span id='eml'></span>
+                <br>
+                <label>mobile</label><br>
+                <input type="text" name="mobile" id="mobile"><br>
+                <span id='mob'></span>
+                <br>
+                <button class="butto">Sign Up</button>
+            </form>
+        </div>
+        
+    </div>
+    <div class="logos">
+        <h3>connect with us</h3>
+        <div class="lcontainer">
+           <a href="#"> <div class="one"><i class="fab fa-facebook-f"></i></div></a>
+           <a href="#"> <div class="two"><i class="fab fa-instagram"></i></div></a>
+           <a href="#"><div class="three"><i class="fab fa-google"></i></div></a>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function validation(){
+        var user = document.getElementById('username').value;
+        var pass = document.getElementById('password').value;
+        var conpass = document.getElementById('confirm').value;
+        var email = document.getElementById('email').value;
+        var mobile = document.getElementById('mobile').value;
+
+        if(user == ""){
+            document.getElementById('un').innerHTML ="please enter username";
+            return false;
+        }else{
+            document.getElementById('un').innerHTML ="";
+        }
+
+        if(pass == ""){
+            document.getElementById('pwd').innerHTML ="please enter password";
+            return false;
+        }
+        if(pass.length<3){
+            document.getElementById('pwd').innerHTML ="please enter atleast 3 letters";
+            return false;
+        }
+        if(pass.length>9){
+            document.getElementById('pwd').innerHTML ="password should not exceed 9 characters";
+            return false;
+        }else{
+            document.getElementById('pwd').innerHTML ="";
+        }
+        if(pass!=conpass){
+            document.getElementById('conpwd').innerHTML ="password dosnt match";
+            return false;
+        }else{
+            document.getElementById('conpwd').innerHTML ="";
+        }
+
+        if(email==""){
+            document.getElementById('eml').innerHTML="feild should not be empty"
+            return false
+        }
+        if(email.indexOf('@')<=0){
+            document.getElementById('eml').innerHTML="invalid possition of @"
+            return false
+        }else{
+
+            document.getElementById('eml').innerHTML=""
+        }
+        if(mobile==''){
+            document.getElementById('mob').innerHTML="please enter mobile number"
+            return false
+        }
+        if(isNaN(mobile)){
+            document.getElementById('mob').innerHTML="please enter numbers"
+            return false
+        }
+        if(mobile.length<10){
+            document.getElementById('mob').innerHTML="digits are missing"
+            return false
+        }else{
+            document.getElementById('mob').innerHTML=""
+        }
+    }
+
+
+
+       function popup(){
+
+        document.getElementById('mainshow').style.display="block";
+        document.getElementById('discript').style.display="none"
+       }
+    </script>
+</body>
+</html>
